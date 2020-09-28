@@ -1,0 +1,65 @@
+<div *ngIf="( isNewForm | async); then newForm else submittedForm"></div>
+<ng-template #newForm>
+  <mat-card class="register-card">
+    <mat-card-title class="card-title">SIGN UP</mat-card-title>
+    <hr class="dialog-title-hr">
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <table class="card-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="card-full-width">
+                <input matInput placeholder="First Name" formControlName="firstName" required>
+                <mat-error *ngIf="isFieldInvalid('firstName')">
+                  Please enter first name
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="card-full-width">
+                <input matInput placeholder="Last Name" formControlName="lastName" required>
+                <mat-error *ngIf="isFieldInvalid('lastName')">
+                  Please enter last name
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="card-full-width">
+                <input matInput placeholder="Email" formControlName="email" required>
+                <mat-error *ngIf="isFieldInvalid('email')">
+                  Please enter email
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="card-full-width">
+                <input matInput placeholder="Password" formControlName="password" type="password" required>
+                <mat-error *ngIf="isFieldInvalid('password')">
+                  Please enter password
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <mat-card-actions>
+          <button mat-raised-button color="accent" type="button" (click)="signin()">SIGN IN</button>
+          <button [disabled]="!form.valid" mat-raised-button color="accent" type="submit">SUBMIT</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+
+<ng-template #submittedForm>
+  <div>
+    <div class="submittedform-card" style="width: 21rem;">
+      <div>You have been registered successfully. Please login to your account.</div>
+    </div>
+  </div>
+</ng-template>

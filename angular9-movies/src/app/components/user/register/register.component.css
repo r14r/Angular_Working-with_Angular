@@ -1,0 +1,38 @@
+  .register-card {
+    max-width: 300px;
+    margin: 150px auto auto auto;
+  }
+
+  .card-full-width {
+    width: 100%;
+  }
+
+  .card-title {
+    font-family: 'Passion One', cursive;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  mat-card-actions {
+    margin: 0 auto;
+  }
+
+  mat-card-content {
+    margin-top: 20px;
+  }
+
+  button {
+    border-radius: 0px;
+  }
+
+  .submittedform-card {
+    margin-top: 250px;
+    background: none;
+    border: none;
+    margin-left: 33%;
+    font-size: 16px;
+    text-align: center;
+    color: forestgreen;
+    font-weight: 500;
+}

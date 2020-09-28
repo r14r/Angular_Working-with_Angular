@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "src/environments": true,
+    "browserslist": true,
+    "**/test.ts": true,
+    "**/polyfills.ts": true,
+    "**/favicon.ico": true,
+    "**/yarn.lock": true,
+    "**/*.spec.ts": true,
+    "**/*.spec.json": true,
+    "**/.env": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/package-lock.json": true,
+    "**/yarn-error.log": true,
+    "**/main.ts": true,
+    "**/.envrc": true,
+    "**/e2e": true
+  }
+}

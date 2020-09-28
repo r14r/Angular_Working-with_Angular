@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:800');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+.movieRelease {
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.movieOverview {
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+}
+
+.movieTitle {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+mat-card {
+    color: white;
+    background-image: url("../../../../assets/background.jpg");
+    background-repeat: no-repeat;
+}
+
+i {
+    cursor: pointer;
+}

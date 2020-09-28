@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~font-awesome/css/font-awesome.css';
+
+body {
+    margin: 0;
+    background-color: #F0F8FF;
+    height: 100%;
+    min-height:37em; background-size:cover; width:auto;
+}
+
+.success-snackbar {
+    background-color: #007E33;
+}
+
+.error-snackbar {
+    background-color: #CC0000;
+}
+
+.table-layout {
+    width: 65%;
+    max-height:  500px;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+}

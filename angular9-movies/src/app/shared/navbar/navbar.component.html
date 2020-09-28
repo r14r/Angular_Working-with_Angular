@@ -1,0 +1,32 @@
+<div *ngIf="(isUserLoggedIn | async); then authenticatedUser else guest"></div>
+<ng-template #authenticatedUser>
+	<mat-toolbar color="primary" class="fixed-header">
+		<span class="appName">Welcome {{userName}}</span>
+		<span class="spacer"></span>
+		<a mat-button routerLink="/recent-movies">
+			<b>HOME</b>
+		</a>
+		<a mat-button routerLink="/bookmarked-movies">
+			<b>BOOKMARKED</b>
+		</a>
+		<a mat-button routerLink="/upcoming-movies">
+			<b>UPCOMING</b>
+		</a>
+		<button type="submit" mat-raised-button color="primary" (click)="onLogout()">
+			<b>LOGOUT</b>
+		</button>
+	</mat-toolbar>
+</ng-template>
+
+<ng-template #guest>
+	<mat-toolbar color="primary" class="fixed-header">
+		<span class="appName">SHIFT</span>
+		<span class="spacer"></span>
+		<a mat-button routerLink="/demo/home"> <b>DEMO: Home</b></a>
+		<a mat-button routerLink="/demo/demo"> <b>Demo: Demo</b> </a>
+		|
+		<a mat-button routerLink="/recent-movies"> <b>HOME</b> </a>
+		<a mat-button routerLink="/upcoming-movies"> <b>UPCOMING</b> </a>
+		<a mat-button routerLink="/login"> <b>LOGIN</b> </a>
+	</mat-toolbar>
+</ng-template>

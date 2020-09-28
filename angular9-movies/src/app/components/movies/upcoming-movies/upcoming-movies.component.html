@@ -1,0 +1,58 @@
+<div class="table-layout">
+    <div class="movieTitle" style="text-align: center;">Upcoming Movie List</div>
+    <hr>
+    <div fxLayout="row">
+        <div fxFlex="30%">
+            <mat-form-field appearance="outline">
+                <mat-label>Sort By</mat-label>
+                <mat-select>
+                    <mat-option>Sort By</mat-option>
+                    <mat-option value="title" (click)="sortByTitle()">Movie Name</mat-option>
+                    <mat-option value="release_date" (click)="sortByRelease()">Release</mat-option>
+                    <mat-option value="vote_average" (click)="sortByRating()">Rating</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center;">
+        <mat-progress-spinner color="primary" mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
+
+    <div *ngIf="noMovies">
+        <mat-card>
+            <p class="movieTitle">No Movie Available! </p>
+        </mat-card>
+    </div>
+
+    <div *ngIf="!isLoading">
+        <div *ngFor="let movie of upcomingMovies">
+            <br>
+            <mat-card>
+                <div fxLayout="row">
+                    <div fxFlex="17%">
+                        <img src={{movie.poster_path}} class="mr-auto d-block img-fluid friend-photo" alt="Fallbackimage">
+                    </div>
+                    <div fxFlex="5%"></div>
+                    <div fxFlex="75%">
+                        <div class="movieTitle">{{ movie.title }} </div><br>
+                        <div class="movieOverview">Release Date : {{ movie.release_date }} &nbsp; | &nbsp; <i class="fa fa-star"
+                                style="color: orange"></i>&nbsp; {{ movie.vote_average }}</div>
+                        <br>
+                        <div class="movieTitle" style="font-size: 15px; margin-bottom: 5px;"> Overview </div>
+                        <div class="movieOverview">{{ movie.overview }} </div> <br>
+                        <div class="movieOverview">Votes : {{ movie.vote_count }} </div><br>
+                    </div>
+                    <div fxFlex="3%">
+                        <span>
+                            <a (click)="bookmarkMovie(movie)">
+                                <i class="fa fa-bookmark-o"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
